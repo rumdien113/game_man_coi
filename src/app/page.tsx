@@ -26,18 +26,18 @@ type GamePhase = "idle" | "answering" | "stolen";
 
 // Game Data
 const SAMPLE_TILES: Tile[] = [
-  { id: 1, points: 10, question: "Ai là mẹ của Chúa Giê-su?", choices: ["Maria", "Martha", "Elisabeth", "Anna"], answer: 0 },
-  { id: 2, points: 10, question: "Thành phố quê hương Maria là?", choices: ["Nazareth", "Bethlehem", "Jerusalem", "Capernaum"], answer: 0 },
-  { id: 3, points: 10, question: "Sự kiện Maria được sùng kính gọi là?", choices: ["Mầu Nhiệm", "Đức Mẹ", "Khổ Nạn", "Mẹ Thiên Chúa"], answer: 3 },
-  { id: 4, points: 10, question: "Ngày kính Đức Mẹ phổ biến là?", choices: ["8/12", "25/12", "15/8", "1/11"], answer: 2 },
-  { id: 5, points: 10, question: "Màu áo thường thấy của Đức Mẹ là?", choices: ["Xanh và trắng", "Đỏ và vàng", "Đen", "Đỏ và xanh"], answer: 0 },
-  { id: 6, points: 10, question: "Tên tiếng Latinh của Maria?", choices: ["Maria", "Mariam", "Mariae", "Marita"], answer: 2 },
-  { id: 7, points: 10, question: "Ai đến thăm Maria lúc truyền tin?", choices: ["Các mục đồng", "Simeon", "Thiên thần Gabriel", "Phêrô"], answer: 2 },
-  { id: 8, points: 10, question: "Có bao nhiêu ô trong trò chơi?", choices: ["10", "12", "14", "16"], answer: 1 },
-  { id: 9, points: 10, question: "Đức Mẹ được gọi là?", choices: ["Mẹ Thiên Chúa", "Nữ Vương", "Cả hai", "Không ai"], answer: 2 },
-  { id: 10, points: 10, question: "Lễ Đức Mẹ Hồn Xác Lên Trời là?", choices: ["15/8", "25/12", "1/1", "8/12"], answer: 0 },
-  { id: 11, points: 10, question: "Một biểu tượng của Maria thường là?", choices: ["Ngôi sao", "Trăng lưỡi liềm", "Cây thánh giá", "Cây gậy"], answer: 1 },
-  { id: 12, points: 10, question: "Maria là mẹ của ai?", choices: ["Moses", "Jesus", "David", "Noah"], answer: 1 }
+  { id: 1, points: 10, question: "Kinh Kính Mừng chỉ được ấn định với hình thức cố định trong toàn thể Hội Thánh vào thời nào?", choices: ["Thế kỷ XVI, dưới triều Đức Giáo Hoàng Piô V", "Thế kỷ XII, khi Thánh danh “Giêsu” được thêm vào", "Thế kỷ XIV, khi xuất hiện phần cầu “Sancta Maria, ora pro nobis.”", "Thế kỷ XI, khi người ta chỉ đọc lời chào của bà Êlisabét"], answer: 0 },
+  { id: 2, points: 10, question: "Đức Giáo Hoàng nào đã lập lễ “Đức Bà Thắng Trận” để ghi nhớ chiến thắng Lepante?", choices: ["Đức Piô V", "Đức Grêgôriô XIII", "Đức Clêmentê XI", "Đức Lêô XIII"], answer: 0 },
+  { id: 3, points: 10, question: "Đức Giáo Hoàng Grêgôriô XIII đã đổi danh hiệu lễ nào thành “Lễ Mân Côi Thánh”?", choices: ["Đức Mẹ Phù Hộ Các Giáo Hữu", "Lễ Đức Mẹ Chiến Thắng", "Đức Mẹ Lên Trời", "Đức Mẹ Fatima"], answer: 1 },
+  { id: 4, points: 10, question: "Trước kia vào thế kỉ X, các tu sĩ đọc 150 Thánh Vịnh. Khi không hiểu tiếng Latinh, họ đã thay thế bằng:", choices: ["150 Kinh Sáng Danh", "150 Kinh Lạy Cha", "150 Kinh Kính Mừng", "150 Kinh Tin Kính"], answer: 1 },
+  { id: 5, points: 10, question: "Người được Đức Mẹ trao sứ mệnh truyền bá Kinh Mân Côi là ai?", choices: ["Thánh Phanxicô Assisi", "Thánh Đa Minh (Dominico)", "Thánh Giêrônimô", "Thánh Antôn Padua"], answer: 1 },
+  { id: 6, points: 10, question: "Vào những năm 1400, các mầu nhiệm trong Kinh Mân Côi được đúc kết thành bao nhiêu mầu nhiệm chính?", choices: ["10 mầu nhiệm", "15 mầu nhiệm", "20 mầu nhiệm", "25 mầu nhiệm"], answer: 1 },
+  { id: 7, points: 10, question: "Thánh danh “Giêsu” được thêm vào phần đầu Kinh Mân Côi khi nào?", choices: ["Thế kỉ XII", "Thế kỉ XIII", "Thế kỉ XI", "Thế kỉ XIV"], answer: 0 },
+  { id: 8, points: 10, question: "Thánh Đa Minh đã từng khẳng định điều gì về giá trị của Kinh Mân Côi?", choices: ["Không có việc nào đẹp lòng Chúa Giêsu và Mẹ Người hơn là đọc Kinh Mân Côi một cách sốt sắng.", "Thiên Chúa cai trị thế gian, nhưng kinh nguyện điều khiển Thiên Chúa.", "Kinh Mân Côi là thói quen đạo đức hằng ngày của các thánh", "Đọc Kinh Mân Côi là niềm vui và niềm an ủi sâu xa nhất trong tâm hồn tôi"], answer: 0 },
+  { id: 9, points: 10, question: "Theo Đức Giáo Hoàng Piô XI, Ngài đã khẳng định điều gì về giá trị của Kinh Mân Côi?", choices: ["Mỗi phần tử trong Hội Kinh Mân Côi luân phiên ngày đêm đọc kinh như một sự tôn kính không ngừng dâng lên Mẹ Thiên Chúa", "Kinh Mân Côi thực là một triều thiên hoa hồng rực rỡ nhất mà tuổi thanh xuân có thể đội", "Kinh Mân Côi mang ý nghĩa là kinh nguyện chung của gia đình.", "Không gì hoàn hảo hơn khi nhiều tiếng cầu xin từ khắp nơi trên thế giới cùng dâng lên Đức Trinh Nữ Maria"], answer: 1 },
+  { id: 10, points: 10, question: "Ai đã thêm 5 mầu nhiệm Sự Sáng vào Kinh Mân Côi vào năm 2002?", choices: ["Đức Piô XII", "Đức Gioan Phaolô II", "Đức Phanxicô", "Đức Lêô XIII"], answer: 1 },
+  { id: 11, points: 10, question: "Một biểu tượng của Maria thường là?", choices: ["Ai đọc Kinh Mân Côi sẽ không bị rủi ro, chết bất đắc kỳ tử.", "Ai mộ mến chuỗi Mân Côi, khi lâm tử sẽ được chia sản nghiệp trên Thiên Đàng.", "Đức Mẹ sẽ cứu khỏi hỏa ngục cho những ai siêng năng đọc Kinh Mân Côi.", "Những ai truyền bá chuỗi Mân Côi sẽ được Mẹ giúp đỡ trong lúc gặp khó khăn."], answer: 2 },
+  { id: 12, points: 10, question: "Theo “Thủ bản về Ân xá” (ấn bản năm 1999, Ân ban số 17), những việc đạo đức nào sau đây được ban ơn tiểu xá, ngoại trừ:", choices: ["Đọc sốt sắng thánh thi Te Deum", "Sốt sắng đọc thánh thi Magnificat (“Linh hồn tôi ngợi khen Chúa…”).", "Sốt sắng đọc Kinh Truyền Tin vào buổi sáng, trưa hoặc chiều.", "Sốt sắng cầu xin cùng Đức Mẹ bằng các kinh như “Kinh Hãy Nhớ” hoặc “Kinh Lạy Nữ Vương”"], answer: 0 }
 ];
 
 const DEFAULT_TEAMS: Team[] = [
@@ -164,13 +164,10 @@ export default function HomePage() {
 
   const handleCorrectAnswer = (tile: Tile, teamIdx: number) => {
     if (stealModeRef.current) {
-      console.log("[DEBUG] STEAL correct -> revealing points only", { tileId: tile.id });
-
       setTiles(prev => {
         const updated = prev.map(t =>
           t.id === tile.id ? { ...t, revealedPoints: true } : t
         );
-        console.log("[DEBUG] Updated tiles (revealed):", updated);
         return updated;
       });
 
@@ -274,10 +271,9 @@ export default function HomePage() {
   };
 
   const getTileClassName = (tile: Tile) => {
-    console.log("[DEBUG] Rendering tile:", tile.id, { opened: tile.opened, revealedPoints: tile.revealedPoints });
     if (tile.opened) {
       // Ô đã mở - hiển thị bức tranh phía sau (trong suốt)
-      return "bg-transparent text-transparent border-2 border-green-400";
+      return "";
     } else if (tile.revealedPoints) {
       // Ô có điểm được tiết lộ nhưng vẫn che bức tranh (ô trắng)
       return "bg-white text-gray-600 border-2 border-gray-400 shadow-md";
@@ -316,7 +312,7 @@ export default function HomePage() {
             src="/bg.jpg"
             alt="Đức Mẹ"
             fill
-            className="object-cover rounded-lg opacity-40"
+            className="object-cover rounded-lg"
             priority
           />
           <div className="grid grid-cols-4 gap-2 relative z-10 p-2">
