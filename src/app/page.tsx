@@ -315,9 +315,8 @@ export default function HomePage() {
             className="object-cover rounded-lg"
             priority
           />
-          <div className="grid grid-cols-4 gap-2 relative z-10 p-2">
+          <div className="grid grid-cols-4 gap-0.5 relative z-10 p-1">
             {tiles.map(tile => {
-              console.log("[DEBUG] Tile in render:", tile.id, tile);
               return (
                 <div
                   key={tile.id}
