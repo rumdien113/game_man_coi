@@ -49,7 +49,7 @@ const DEFAULT_TEAMS: Team[] = [
 
 // Game Constants
 const ANSWER_TIME = 30; // seconds
-const STEAL_TIME = 7; // seconds
+const STEAL_TIME = 0; // seconds
 const GUESS_THRESHOLD = 6; // minimum opened tiles to enable guessing
 const GUESS_BONUS = 20; // points for correct guess
 
@@ -293,8 +293,19 @@ export default function HomePage() {
   // Loading state
   if (!mounted) {
     return (
-      <main className="min-h-screen bg-gray-100 text-gray-800 p-6 flex flex-col items-center">
-        <h1 className="text-xl font-bold mb-2 text-blue-700">ẨN HỌA THIÊN ÂN</h1>
+      <main className="min-h-screen bg-gray-100 text-gray-800 p-6 flex flex-col items-center relative">
+        {/* Logo ở góc trên trái */}
+        <div className="absolute top-6 left-6">
+          <Image
+            src="/logo.jpg"
+            alt="Logo"
+            width={60}
+            height={60}
+            className="rounded-lg"
+          />
+        </div>
+        
+        <h1 className="text-xl font-bold mb-4 text-blue-700">ẨN HỌA THIÊN ÂN</h1>
         <div className="flex items-center justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-700"></div>
         </div>
@@ -303,7 +314,18 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 text-gray-800 p-6 flex flex-col items-center">
+    <main className="min-h-screen bg-gray-100 text-gray-800 p-6 flex flex-col items-center relative">
+      {/* Logo ở góc trên trái */}
+      <div className="absolute top-6 left-6">
+        <Image
+          src="/logo.jpg"
+          alt="Logo"
+          width={60}
+          height={60}
+          className="rounded-lg"
+        />
+      </div>
+      
       <h1 className="text-3xl font-bold mb-4 text-blue-700">ẨN HỌA THIÊN ÂN</h1>
 
       <div className="flex flex-col md:flex-row gap-6 w-full max-w-6xl">
