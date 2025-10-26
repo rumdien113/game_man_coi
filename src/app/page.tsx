@@ -116,12 +116,13 @@ export default function HomePage() {
   }, [timeLeft]);
 
   const handleTimeUp = () => {
-    setPhase("stolen");
-    setMessage("⏰ Hết thời gian! Các đội khác có thể giành quyền trả lời.");
-    startTimer(STEAL_TIME);
+    if (selectedTile) {
+      handleWrongAnswer(selectedTile, currentTeamIndex);
+    }
   };
 
   const handleStealTimeUp = () => {
+    startTimer(STEAL_TIME);
     if (selectedTile) {
       setMessage(`⏰ Hết thời gian giành quyền! Ô ${selectedTile.id} có ${selectedTile.points > 0 ? '+' : ''}${selectedTile.points} điểm nhưng không được mở.`);
     }
@@ -255,7 +256,7 @@ export default function HomePage() {
     const text = prompt(`${teams[teamIdx].name} đoán bức tranh là gì?`)?.trim().toLowerCase();
     if (!text) return;
 
-    if (text.includes("maria") || text.includes("Đức Mẹ dâng mình trong đền thờ")) {
+    if (text.includes("đức mẹ dâng mình trong đền thờ") || text.includes("Đức Mẹ dâng mình trong đền thờ")) {
       setMessage(`🎉 ${teams[teamIdx].name} đoán đúng! +${GUESS_BONUS} điểm.`);
       setTeams(prev => prev.map((t, i) => i === teamIdx ? { ...t, score: t.score + GUESS_BONUS } : t));
       setGameOver(true);
